@@ -2,10 +2,10 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class LoadQ1 : MonoBehaviour {
+public class LoadTraQ1Spec : MonoBehaviour {
 
     public void NextScene()
     {
-        SceneManager.LoadScene("Q1");
+        SceneManager.LoadScene(Global.CnsSceneTraQ1Spec);
     }
 }
