@@ -3,9 +3,9 @@ using System.Collections;
 
 public class Global : MonoBehaviour {
 
-    /********************************
-    * 定数
-    ********************************/
+    /*---------------------------------------------------
+     * 定数
+     * --------------------------------------------------*/
     // シーン名
     public const string CnsSceneTraining = "Training";
     public const string CnsSceneChallenge = "Challenge";
@@ -15,6 +15,11 @@ public class Global : MonoBehaviour {
 
     public const string CnsSceneChaQ1Spec = "ChaQ1Spec";
     public const string CnsSceneChaQ1Question = "ChaQ1Question";
+
+    /*---------------------------------------------------
+     * 変数
+     * --------------------------------------------------*/
+    public static string NextSceneName = "";    // 次に遷移するシーン名
 
     // このオブジェクト用の変数
     private static bool isCreatedObj = false;   // オブジェクト作成済みフラグ
