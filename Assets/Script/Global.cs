@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Global : MonoBehaviour {
+public class Global : SingletonMonoBehaviour<Global>
+{
 
     /*---------------------------------------------------
      * 定数
@@ -21,25 +22,13 @@ public class Global : MonoBehaviour {
      * --------------------------------------------------*/
     public static string NextSceneName = "";    // 次に遷移するシーン名
 
-    // このオブジェクト用の変数
-    private static bool isCreatedObj = false;   // オブジェクト作成済みフラグ
-
+    // シングルトン使用
     void Awake()
     {
-        // 作成済みフラグがoffの場合
-        if (isCreatedObj == false)
-        {
-            // シーンが切り替わってもオブジェクトを破棄しない
-            DontDestroyOnLoad(this.gameObject);
-
-            // 作成済みフラグをOnにする
-            isCreatedObj = true;
-            // 作成済みフラグがonの場合
+        if (this != Instance){
+            Destroy(this);
+            return;
         }
-        else
-        {
-            // オブジェクトを破棄する
-            Destroy(this.gameObject);
-        }
+        DontDestroyOnLoad(this.gameObject);
     }
 }
